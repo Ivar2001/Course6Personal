@@ -15,9 +15,9 @@ public class Organisme extends JButton implements ActionListener {
     public void setState(Boolean state) {
         this.state = state;
         if (this.state){
-            setBackground(Color.green);
+            setBackground(Color.black);
         }else{
-            setBackground(Color.red);
+            setBackground(Color.white);
         }
     }
 
