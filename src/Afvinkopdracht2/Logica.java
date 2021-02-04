@@ -20,7 +20,9 @@ public class Logica extends Thread{
     }
 
     public void run(){
-
+        /***
+         * Tweede thread om te runnen, dit is de daatwerkelijke logica achter het spel
+         */
         while (permission) {
             try {
                 Thread.sleep(500);
@@ -37,7 +39,6 @@ public class Logica extends Thread{
          * of levend blijft/word (true)
          */
         for (int y = 0; y < populatie.length; y++) {
-            System.out.println(y);
             for (int x = 0; x < populatie[y].length; x++) {
                 getseroundings(y, x);
                 if (levend < 2 && populatie[y][x].getState()) {
@@ -93,7 +94,7 @@ public class Logica extends Thread{
             omgeving[5]= populatie[y+1][x].getState();
             omgeving[6]= populatie[y+1][x-1].getState();
             omgeving[7]= populatie[y][x-1].getState();
-        }else if(y== yas-1){
+        }else if(y==yas-1){
             // Onderzijde
             omgeving[0]= populatie[y-1][x-1].getState();
             omgeving[1]= populatie[y-1][x].getState();
